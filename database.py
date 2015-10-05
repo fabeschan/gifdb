@@ -165,7 +165,7 @@ class gifdb(object):
             print row
 
     def list_tags(self):
-        print self.cursor.execute("SELECT * FROM TAGS").fetchall()
+        pprint([r[1] for r in self.cursor.execute("SELECT * FROM TAGS").fetchall()])
 
 if __name__ == '__main__':
     arguments = docopt(__doc__)
